@@ -1,0 +1,444 @@
+specVersion: 0.0.2
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Compound1
+    network: mainnet
+    source:
+      address: "0xDBe281E17540Da5305Eb2AeFB8CeF70E6dB1A0A9"
+      abi: Contract
+      startBlock: 9208797
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Contract
+          file: Compound1/abis/Contract.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: Compound1/Compound1.wasm
+  - kind: ethereum/contract
+    name: Compound1Swap
+    network: mainnet
+    source:
+      address: "0xe5FdBab9Ad428bBB469Dee4CB6608C0a8895CbA5"
+      abi: Swap
+      startBlock: 9208803
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Swap
+          file: Compound1Swap/abis/SwapCompound1.json
+      eventHandlers:
+        - event: AddLiquidity(indexed address,uint256[2])
+          handler: handleBlock
+      file: Compound1/Compound1.wasm
+  - kind: ethereum/contract
+    name: Compound2
+    network: mainnet
+    source:
+      address: "0x3740fb63ab7a09891d7c0d4299442A551D06F5fD"
+      abi: Contract
+      startBlock: 9325876
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Contract
+          file: Compound2/abis/Contract.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: Compound1/Compound1.wasm
+  - kind: ethereum/contract
+    name: Compound2Swap
+    network: mainnet
+    source:
+      address: "0x2e60CF74d81ac34eB21eEff58Db4D385920ef419"
+      abi: Swap
+      startBlock: 9325883
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Swap
+          file: Compound2Swap/abis/SwapCompound2.json
+      eventHandlers:
+        - event: AddLiquidity(indexed address,uint256[2],uint256,uint256)
+          handler: handleBlock
+      file: Compound1/Compound1.wasm
+  - kind: ethereum/contract
+    name: Compound3
+    network: mainnet
+    source:
+      address: "0x845838DF265Dcd2c412A1Dc9e959c7d08537f8a2"
+      abi: Contract
+      startBlock: 9554031
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Contract
+          file: Compound3/abis/Contract.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: Compound1/Compound1.wasm
+  - kind: ethereum/contract
+    name: Compound3Swap
+    network: mainnet
+    source:
+      address: "0xA2B47E3D5c44877cca798226B7B8118F9BFb7A56"
+      abi: Swap
+      startBlock: 9554040
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Swap
+          file: Compound3Swap/abis/SwapCompound3.json
+      eventHandlers:
+        - event: AddLiquidity(indexed address,uint256[2],uint256[2],uint256,uint256)
+          handler: handleBlock
+      file: Compound1/Compound1.wasm
+  - kind: ethereum/contract
+    name: USDT
+    network: mainnet
+    source:
+      address: "0x9fC689CCaDa600B6DF723D9E47D84d76664a1F23"
+      abi: Contract
+      startBlock: 9456284
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Contract
+          file: USDT/abis/Contract.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: Compound1/Compound1.wasm
+  - kind: ethereum/contract
+    name: USDTSwap
+    network: mainnet
+    source:
+      address: "0x52EA46506B9CC5Ef470C5bf89f17Dc28bB35D85C"
+      abi: Swap
+      startBlock: 9456293
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Swap
+          file: USDTSwap/abis/SwapUSDT.json
+      eventHandlers:
+        - event: AddLiquidity(indexed address,uint256[3],uint256[3],uint256,uint256)
+          handler: handleBlock
+      file: Compound1/Compound1.wasm
+  - kind: ethereum/contract
+    name: iearn
+    network: mainnet
+    source:
+      address: "0xdF5e0e81Dff6FAF3A7e52BA697820c5e32D806A8"
+      abi: Contract
+      startBlock: 9476452
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Contract
+          file: iearn/abis/Contract.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: Compound1/Compound1.wasm
+  - kind: ethereum/contract
+    name: BUSD
+    network: mainnet
+    source:
+      address: "0x3B3Ac5386837Dc563660FB6a0937DFAa5924333B"
+      abi: Contract
+      startBlock: 9567293
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Contract
+          file: BUSD/abis/Contract.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: Compound1/Compound1.wasm
+  - kind: ethereum/contract
+    name: susd
+    network: mainnet
+    source:
+      address: "0x2b645a6A426f22fB7954dC15E583e3737B8d1434"
+      abi: Contract
+      startBlock: 9636548
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Contract
+          file: susd/abis/Contract.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: Compound1/Compound1.wasm
+  - kind: ethereum/contract
+    name: susdv2
+    network: mainnet
+    source:
+      address: "0xC25a3A3b969415c80451098fa907EC722572917F"
+      abi: Contract
+      startBlock: 9906564
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Contract
+          file: susdv2/abis/Contract.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: Compound1/Compound1.wasm
+  - kind: ethereum/contract
+    name: PAX
+    network: mainnet
+    source:
+      address: "0xd905e2eaebe188fc92179b6350807d8bd91db0d8"
+      abi: Contract
+      startBlock: 10041032
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Contract
+          file: PAX/abis/Contract.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: Compound1/Compound1.wasm
+  - kind: ethereum/contract
+    name: ren
+    network: mainnet
+    source:
+      address: "0x49849C98ae39Fff122806C06791Fa73784FB3675"
+      abi: Contract
+      startBlock: 10151366
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Contract
+          file: ren/abis/Contract.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: Compound1/Compound1.wasm
+  - kind: ethereum/contract
+    name: sbtc
+    network: mainnet
+    source:
+      address: "0x075b1bb99792c9E1041bA13afEf80C91a1e70fB3"
+      abi: Contract
+      startBlock: 10276544
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Contract
+          file: sbtc/abis/Contract.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: Compound1/Compound1.wasm
+  - kind: ethereum/contract
+    name: PAXSwap
+    network: mainnet
+    source:
+      address: "0x06364f10B501e868329afBc005b3492902d6C763"
+      abi: Swap
+      startBlock: 10041041
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Swap
+          file: PAXSwap/abis/SwapIEARN.json
+      eventHandlers:
+        - event: AddLiquidity(indexed address,uint256[4],uint256[4],uint256,uint256)
+          handler: handleBlock
+      file: Compound1/Compound1.wasm
+  - kind: ethereum/contract
+    name: iearnSwap
+    network: mainnet
+    source:
+      address: "0x45F783CCE6B7FF23B2ab2D70e416cdb7D6055f51"
+      abi: Swap
+      startBlock: 9476468
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Swap
+          file: iearnSwap/abis/SwapIEARN.json
+      eventHandlers:
+        - event: AddLiquidity(indexed address,uint256[4],uint256[4],uint256,uint256)
+          handler: handleBlock
+      file: Compound1/Compound1.wasm
+  - kind: ethereum/contract
+    name: busdSwap
+    network: mainnet
+    source:
+      address: "0x79a8C46DeA5aDa233ABaFFD40F3A0A2B1e5A4F27"
+      abi: Swap
+      startBlock: 9567295
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Swap
+          file: busdSwap/abis/SwapIEARN.json
+      eventHandlers:
+        - event: AddLiquidity(indexed address,uint256[4],uint256[4],uint256,uint256)
+          handler: handleBlock
+      file: Compound1/Compound1.wasm
+  - kind: ethereum/contract
+    name: susdSwap
+    network: mainnet
+    source:
+      address: "0xeDf54bC005bc2Df0Cc6A675596e843D28b16A966"
+      abi: Swap
+      startBlock: 9636557
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Swap
+          file: susdSwap/abis/SwapSUSD.json
+      eventHandlers:
+        - event: AddLiquidity(indexed address,uint256[2],uint256[2],uint256,uint256)
+          handler: handleBlock
+      file: Compound1/Compound1.wasm
+  - kind: ethereum/contract
+    name: susdv2Swap
+    network: mainnet
+    source:
+      address: "0xA5407eAE9Ba41422680e2e00537571bcC53efBfD"
+      abi: Swap
+      startBlock: 9906598
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Swap
+          file: susdv2Swap/abis/SwapIEARN.json
+      eventHandlers:
+        - event: AddLiquidity(indexed address,uint256[4],uint256[4],uint256,uint256)
+          handler: handleBlock
+      file: Compound1/Compound1.wasm
+  - kind: ethereum/contract
+    name: renSwap
+    network: mainnet
+    source:
+      address: "0x93054188d876f558f4a66B2EF1d97d16eDf0895B"
+      abi: Swap
+      startBlock: 10151385
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Swap
+          file: renSwap/abis/SwapCompound3.json
+      eventHandlers:
+        - event: AddLiquidity(indexed address,uint256[2],uint256[2],uint256,uint256)
+          handler: handleBlock
+      file: Compound1/Compound1.wasm
+  - kind: ethereum/contract
+    name: sbtcSwap
+    network: mainnet
+    source:
+      address: "0x7fC77b5c7614E1533320Ea6DDc2Eb61fa00A9714"
+      abi: Swap
+      startBlock: 10276641
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Swap
+          file: sbtcSwap/abis/SwapUSDT.json
+      eventHandlers:
+        - event: AddLiquidity(indexed address,uint256[3],uint256[3],uint256,uint256)
+          handler: handleBlock
+      file: Compound1/Compound1.wasm
